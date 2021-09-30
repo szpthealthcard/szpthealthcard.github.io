@@ -1,23 +1,46 @@
-<label for="userid">工号:</label><input type="text" name="userid"><br><br>
-<label for="username">姓名:</label><input type="text" name="username"><br><br>
-<label for="duijieren">对接人:</label><input type="text" name="duijieren"><br><br>
-<label for="intime1">入校时间:</label><input type="text" name="intime1"><br><br>
-<label for="gentime">生成时间:</label><input type="text" name="gentime"><br>
-<p style="color: red;">入校时间格式：YYYY-MM-DD 至 YYYY-MM-DD</p>
-<p style="color: red;">生成时间格式：YYYY-MM-DD HH:MM:SS</p>
-<input type="button" name="" value="1145141919810" onclick="set()">
-<script>
-    function set(){
-        if(window.localStorage){
-            localStorage.duijieren = document.all.duijieren.value;
-            localStorage.intime1 = document.all.intime1.value;
-            localStorage.userid = document.all.userid.value;
-            localStorage.username = document.all.username.value;
-            localStorage.gentime = document.all.gentime.value;
-            location.href = './healthcard.html'
-        }else
-        {
-            alert("NOT SUPPORT");
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Signin Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/4.0/examples/sign-in/signin.css" rel="stylesheet">
+</head>
+
+<body class="text-center">
+    <form class="form-signin">
+        <h1 class="h3 mb-3 font-weight-normal">请输入信息</h1>
+        <label for="userid">工号:</label><input class="form-control" type="text" name="userid">
+        <label for="username">姓名:</label><input class="form-control" type="text" name="username">
+        <label for="duijieren">对接人:</label><input class="form-control" type="text" name="duijieren">
+        <label for="intime1">入校时间:</label><input class="form-control" type="text" name="intime1">
+        <label for="gentime">生成时间:</label><input class="form-control" type="text" name="gentime"><br>
+        <input class="btn btn-lg btn-primary btn-block" type="button" name="" value="Submit" onclick="set()">
+        <p class="mt-5 mb-3 text-muted" style="color: red; font-size: 0.8em;">入校时间格式：YYYY-MM-DD 至 YYYY-MM-DD<br>生成时间格式：YYYY-MM-DD HH:MM:SS</p>
+    </form>
+    <script>
+        function set() {
+            if (window.localStorage) {
+                localStorage.duijieren = document.all.duijieren.value;
+                localStorage.intime1 = document.all.intime1.value;
+                localStorage.userid = document.all.userid.value;
+                localStorage.username = document.all.username.value;
+                localStorage.gentime = document.all.gentime.value;
+                location.href = './healthcard.html'
+            } else {
+                alert("NOT SUPPORT");
+            }
         }
-    }
-</script>
+    </script>
+</body>
+
+</html>
